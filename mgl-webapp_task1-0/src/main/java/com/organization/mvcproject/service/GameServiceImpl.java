@@ -56,6 +56,7 @@ public class GameServiceImpl implements GameService {
 
 	@Override
 	public Game saveGame(Game game) {
+		//System.out.println(game.getId());
 		game.setId(++gameId);
 		games.add(game);
 		return game;

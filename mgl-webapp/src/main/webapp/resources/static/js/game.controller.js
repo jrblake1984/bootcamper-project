@@ -4,9 +4,9 @@ angular.module('MGL_Task1_app').controller('MGL_Task1_Controller',
 		[ 'MGL_Task1_Service', function(MGL_Task1_Service) {
 			var self = this;
 			self.game = {
-				game_id : '',
-				game_name : '',
-				game_genre : ''
+				id : '',
+				name : '',
+				genre : ''
 			};
 			self.games = [];
 
@@ -18,6 +18,11 @@ angular.module('MGL_Task1_app').controller('MGL_Task1_Controller',
 
 			self.addGame = function(){
 				return MGL_Task1_Service.createGame(self.game).then( function() {
+				self.fetchAllGames();
+				});
+			}
+			self.deleteGame = function(game){
+				return MGL_Task1_Service.deleteGame(self.game).then( function() {
 				self.fetchAllGames();
 				});
 			}
