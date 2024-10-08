@@ -9,10 +9,21 @@ angular.module('GameApp').controller('GameController',
 				genre : ''
 			};
 			self.games = [];
+			
+			self.sortByGenre = function()
+			{
+				self.games.sort((a,b)=> a.genre.localeCompare(b.genre));
+			}
+			
+			self.sortByGenreD = function()
+			{
+				self.games.sort((a,b)=> b.genre.localeCompare(a.genre));
+			}
 
 			self.fetchAllGames = function(){
 				GameService.fetchAllGames().then(function(data) {
 					self.games = data;
+
 				});
 			}
 

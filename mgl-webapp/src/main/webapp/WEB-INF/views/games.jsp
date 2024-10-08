@@ -78,7 +78,10 @@
                         <thead>
                             <tr>
                                 <th>Game Name</th>
-                                <th>Game Genre</th>
+                                <th>Game Genre
+                                	<input ng-click="ctrl.sortByGenre()" value="SortA" class="btn btn-primary btn-sm">
+                                	<input ng-click="ctrl.sortByGenreD()" value="SortD" class="btn btn-primary btn-sm">
+                               	</th>
                                 <th>Game Id</th>
                                 <th width="20%"></th>
                             </tr>

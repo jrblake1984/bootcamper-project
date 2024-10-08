@@ -22,7 +22,7 @@ import com.organization.mvcproject.service.GameService;
 public class GameController {
 
 	@Autowired
-	private GameService GameService;
+	private GameService gameService;
 
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String home() {
@@ -66,23 +66,23 @@ public class GameController {
 	 * TODO 2.0 (Separation of concerns) consider moving all controller endpoints that return a ResponseEntity into a @RestController.
 	 */
 	
-	//TODO 1.0 RequestMapping URL should follow RESTful.
+
 	@RequestMapping(value = "/game/getAll", method = RequestMethod.GET)
 	public ResponseEntity<List<Game>> fetchAllGames() {
-		return new ResponseEntity<List<Game>>(GameService.retrieveAllGames(), HttpStatus.OK);
+		return new ResponseEntity<List<Game>>(gameService.retrieveAllGames(), HttpStatus.OK);
 	}
 
-	//TODO 1.0 RequestMapping URL should follow RESTful convention
+
 	@RequestMapping(value = "/game/createGame", method = RequestMethod.POST, consumes = MediaType.APPLICATION_JSON_VALUE)
 	public ResponseEntity<Void> createGame(@RequestBody Game game) {
-		GameService.saveGame(game);
+		gameService.saveGame(game);
 		return new ResponseEntity<Void>(HttpStatus.CREATED);
 	}
 	
 	@RequestMapping(value = "/game/deleteGame")
 	public ResponseEntity<Void> deleteGame(@RequestBody Game game) {
-
-		GameService.deleteGame(game);
+		//gameService.deleteGame(game);
+		System.out.println(game.getId());
 		return new ResponseEntity<Void>(HttpStatus.OK);
 	}
 	
