@@ -92,15 +92,15 @@ public class MockDAO {
 	
 	}
 	
-	public Game deleteGame(Game game) {
+	public Long deleteGame(Long id) {
 		
 		for(Game g: games) {
-			if ( game.getId().equals(g.getId())) {
+			if ( g.getId().equals(id)) {
 				games.remove(g);
 			}
 		}
 		System.out.println("Test");
-		return game;
+		return id;
 	}
 	
 }

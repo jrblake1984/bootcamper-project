@@ -26,10 +26,10 @@ public class GameServiceImpl implements GameService {
 	}
 	
 	@Override
-	public Game deleteGame(Game game)
+	public Long deleteGame(Long id)
 	{
-		dao.deleteGame(game);
-		return game;
+		dao.deleteGame(id);
+		return id;
 	}
 	
 

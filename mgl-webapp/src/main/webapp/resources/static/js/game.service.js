@@ -27,8 +27,7 @@ angular.module('GameApp').factory('GameService', ['$http', function($http) {
 		}
 		
 		function deleteGame(game) {
-			return $http.delete(REST_SERVICE_URI + "deleteGame", game).then(function(response) {
-					console.log("delete")
+			return $http.delete(REST_SERVICE_URI + "deleteGame/" + game.id, game.id).then(function(response) {
 					return response.data;
 				}
 			);

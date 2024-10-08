@@ -10,6 +10,7 @@ angular.module('GameApp').controller('GameController',
 			};
 			self.games = [];
 			
+			
 			self.sortByGenre = function()
 			{
 				self.games.sort((a,b)=> a.genre.localeCompare(b.genre));
@@ -33,7 +34,7 @@ angular.module('GameApp').controller('GameController',
 				});
 			}
 			self.deleteGame = function(game){
-				return GameService.deleteGame(self.game).then( function() {
+				return GameService.deleteGame(game).then( function() {
 				self.fetchAllGames();
 				});
 			}
