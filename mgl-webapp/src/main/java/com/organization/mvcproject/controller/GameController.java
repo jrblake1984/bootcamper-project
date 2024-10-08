@@ -1,4 +1,3 @@
-
 package com.organization.mvcproject.controller;
 
 import java.util.List;
@@ -84,7 +83,6 @@ public class GameController {
 	@DeleteMapping(value = "/game/deleteGame/{id}")
 	public ResponseEntity<Void> deleteGame(@PathVariable("id") Long id) {
 		gameService.deleteGame(id);
-		System.out.println(id);
 		return new ResponseEntity<Void>(HttpStatus.OK);
 	}
 	

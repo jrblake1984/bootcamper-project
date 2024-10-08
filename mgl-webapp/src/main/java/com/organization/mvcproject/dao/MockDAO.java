@@ -50,42 +50,9 @@ public class MockDAO {
 				temp = g;
 		return temp;
 	}
-	/*
+
 	public Game saveGame(Game game) {
-		System.out.println(game);
-		game.setId(++gameId);
-		games.add(game);
-		
-		return game;
-		
-	}
-	*/
-	
-	public Game findGameById(Long id) {
-		
-		//for each loop
-		for (Game g : games) {
-			if(id.equals(g.getId())) {
-				return g; 
-			}
-		}
-		// if no game was found
-		return null; 
-	}
-	
-	public Game saveGame(Game game) {
-		if( game.getId() != null) {
-			Game foundGame = findGameById(game.getId());
-		    if(foundGame != null) {
-		    	//update the game in the list
-		    	for (int i = 0; i < games.size(); i++ ) {
-					if(game.getId().equals(games.get(i).getId())) {
-					    return games.set(i, game);
-					}
-		    	}
-		    } 
-		} 
-		
+
 	    game.setId(++gameId);
         games.add((Game) game);
         return game; 
@@ -93,13 +60,11 @@ public class MockDAO {
 	}
 	
 	public Long deleteGame(Long id) {
-		
 		for(Game g: games) {
 			if ( g.getId().equals(id)) {
 				games.remove(g);
 			}
 		}
-		System.out.println("Test");
 		return id;
 	}
 	
