@@ -80,12 +80,9 @@ public class GameController {
 	}
 	
 	@RequestMapping(value = "/game/deleteGame")
-	public ResponseEntity<Void> deleteGame() {
-		Game game3 = new Game();
-		game3.setId((long)2);
-		game3.setGenre("MMORPG");
-		game3.setName("Runescape");
-		GameService.deleteGame(game3);
+	public ResponseEntity<Void> deleteGame(@RequestBody Game game) {
+
+		GameService.deleteGame(game);
 		return new ResponseEntity<Void>(HttpStatus.OK);
 	}
 	
