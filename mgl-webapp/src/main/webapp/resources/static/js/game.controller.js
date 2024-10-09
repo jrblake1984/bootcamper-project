@@ -12,6 +12,10 @@ angular.module('GameApp').controller('GameController',
 			self.games = [];
 			
 		
+			self.clearGame = function()
+			{
+				self.game = null;
+			}
 			
 			self.sortByGenre = function()
 			{
@@ -23,7 +27,8 @@ angular.module('GameApp').controller('GameController',
 				self.games.sort((a,b)=> b.genre.localeCompare(a.genre));
 			}
 			
-			self.selectGame = function(game){
+			self.selectGame = function(game)
+			{
 				self.game = angular.copy(game);
 			}
 
@@ -35,10 +40,13 @@ angular.module('GameApp').controller('GameController',
 			}
 
 			self.addGame = function(){
+
 				return GameService.createGame(self.game).then( function() {
 				self.fetchAllGames();
+				self.clearGame();
 				});
 			}
+			
 			self.deleteGame = function(game){
 				return GameService.deleteGame(game).then( function() {
 				self.fetchAllGames();
