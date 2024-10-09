@@ -8,8 +8,10 @@ angular.module('GameApp').controller('GameController',
 				name : '',
 				genre : ''
 			};
+
 			self.games = [];
 			
+		
 			
 			self.sortByGenre = function()
 			{
@@ -19,6 +21,10 @@ angular.module('GameApp').controller('GameController',
 			self.sortByGenreD = function()
 			{
 				self.games.sort((a,b)=> b.genre.localeCompare(a.genre));
+			}
+			
+			self.selectGame = function(game){
+				self.game = angular.copy(game);
 			}
 
 			self.fetchAllGames = function(){

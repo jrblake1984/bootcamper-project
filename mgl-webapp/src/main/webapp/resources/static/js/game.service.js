@@ -7,7 +7,7 @@ angular.module('GameApp').factory('GameService', ['$http', function($http) {
 		var factory = {
 			fetchAllGames : fetchAllGames,
 			createGame : createGame,
-			deleteGame: deleteGame
+			deleteGame: deleteGame,
 		};
 
 		return factory;

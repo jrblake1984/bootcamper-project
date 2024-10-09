@@ -79,10 +79,10 @@
                             <tr>
                                 <th>Game Name</th>
                                 <th>Game Genre
-                                	<input ng-click="ctrl.sortByGenre()" value="SortA" class="btn btn-primary btn-sm">
-                                	<input ng-click="ctrl.sortByGenreD()" value="SortD" class="btn btn-primary btn-sm">
+                                	<button ng-click="ctrl.sortByGenre()"  class="btn btn-primary btn-sm">SortA</button>
+                                	<button ng-click="ctrl.sortByGenreD()"  class="btn btn-primary btn-sm">SortD</button>
                                	</th>
-                                <th>Game Id</th>
+
                                 <th width="20%"></th>
                             </tr>
                         </thead>
@@ -90,18 +90,17 @@
                             <tr ng-repeat="currentGame in ctrl.games">
                                 <td><span ng-bind="currentGame.name"></span></td>
                                 <td><span ng-bind="currentGame.genre"></span></td>
-                                <td><span ng-bind="currentGame.id"></span></td>
                                 <td>
                                 	<div>
 
                             		</div>
                                 </td>
                                 <td>
+                                <div>
+                                    <input type="submit" ng-click="ctrl.selectGame(currentGame)" value="Select" class="btn btn-primary btn-sm">
+
                                 	
-                                	<div >
-                                	
-                                		<input type="submit" ng-click="ctrl.deleteGame(currentGame)" value="Delete" class="btn btn-primary btn-sm">
-                            	
+                                	<input type="submit" ng-click="ctrl.deleteGame(currentGame)" value="Delete" class="btn btn-primary btn-sm">
                             		</div>
                          
                                 </td>

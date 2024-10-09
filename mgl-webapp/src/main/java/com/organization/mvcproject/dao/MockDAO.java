@@ -42,19 +42,27 @@ public class MockDAO {
 		return games;
 	}
 	
-	public Game findGameById(Game game)
+	public Game findGameById(Long id)
 	{
+	
 		Game temp = null;
-		for(Game g : games)
-			if(g.getId().equals(game.getId()))
+		for(Game g : games) {
+			if(g.getId().equals(id))
 				temp = g;
+		}
 		return temp;
 	}
 
 	public Game saveGame(Game game) {
-
-	    game.setId(++gameId);
-        games.add((Game) game);
+	Game temp = findGameById(game.getId());
+	if(temp != null)
+	{
+		temp.setName(game.getName());
+		temp.setGenre(game.getGenre());
+	} else {
+		game.setId(++gameId);
+		games.add((Game) game);
+	}	
         return game; 
 	
 	}
