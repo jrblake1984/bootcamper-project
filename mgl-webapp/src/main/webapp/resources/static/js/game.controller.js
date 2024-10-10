@@ -8,13 +8,15 @@ angular.module('GameApp').controller('GameController',
 				name : '',
 				genre : ''
 			};
-
+			
 			self.games = [];
 			
+	
 		
 			self.clearGame = function()
 			{
 				self.game = null;
+	
 			}
 			
 			self.sortByGenre = function()

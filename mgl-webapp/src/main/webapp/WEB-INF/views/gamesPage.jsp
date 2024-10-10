@@ -60,13 +60,12 @@
                         </div>
 
                         <div class="row">
-                            <div class="form-actions floatRight">
-                                <input type="submit" value="Add" class="btn btn-primary btn-sm">
-                            </div>
-                            <div class="form-actions floatRight">
-                                <input type="submit" value="Update" class="btn btn-primary btn-sm">
-                            </div>
-                        </div>
+                            <div class="form-actions">
+                                <button ng-if="!ctrl.game || !ctrl.game.id" class="btn btn-primary btn-sm">Add</button>
+                                <button ng-if="ctrl.game.id" class="btn btn-primary btn-sm">Update</button>
+                                <button ng-click="ctrl.clearGame()" class="btn btn-primary btn-sm">Clear</button>
+                            </div>                        
+                       </div>
                     </form>
                 </div>
             </div>
@@ -98,8 +97,6 @@
                                 <td>
                                 <div>
                                     <input type="submit" ng-click="ctrl.selectGame(currentGame)" value="Select" class="btn btn-primary btn-sm">
-
-                                	
                                 	<input type="submit" ng-click="ctrl.deleteGame(currentGame)" value="Delete" class="btn btn-primary btn-sm">
                             		</div>
                          

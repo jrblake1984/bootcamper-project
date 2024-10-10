@@ -71,6 +71,7 @@ public class MockDAO {
 		for(Game g: games) {
 			if ( g.getId().equals(id)) {
 				games.remove(g);
+				break;
 			}
 		}
 		return id;
